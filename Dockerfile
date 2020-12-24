@@ -26,6 +26,6 @@ LABEL \
       org.label-schema.description="Docker container for Google-Chrome" \
       org.label-schema.version="Centos7.7"
 
-#EXPOSE 3000 
+#EXPOSE 80 
 
 CMD ["/usr/sbin/init"]
