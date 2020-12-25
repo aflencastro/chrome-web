@@ -8,5 +8,8 @@ Refer to the solution given in the following article to run Google Chrome on Doc
   https://www.tekfik.com/kb/devops/google-chrome-on-docker-container
   
   
+Resolution 600x500
+Expose 80
+
 Refer to steps given in install.txt file if you want to build your own container. 
 

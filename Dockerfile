@@ -9,7 +9,8 @@ RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.n
     yum -y install tigervnc-server-minimal novnc google-chrome-stable alsa-firmware alsa-lib alsa-tools-firmware; \
     yum -y clean all; rm -rf /var/tmp/* /tmp/* /var/cache/yum/*
 
-RUN /sbin/useradd app;cd /etc/systemd/system/multi-user.target.wants; \
+RUN /sbin/useradd app; \
+    cd /etc/systemd/system/multi-user.target.wants; \
     ln -sf /etc/systemd/system/tgvnc.service tgvnc.service; \    
     ln -sf /etc/systemd/system/chrome.service chrome.service; \
     ln -sf /etc/systemd/system/novnc.service novnc.service;\
