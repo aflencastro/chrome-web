@@ -51,8 +51,8 @@
                         Loading
                     </div></td>
                     <td width="1%"><div id="noVNC_buttons">
-                        <input type=button value="Send CtrlAltDel"
-                            id="sendCtrlAltDelButton">
+                        <input type=button value="Reconectar"
+                            id="reconnectButton">
                         <span id="noVNC_xvp_buttons">
                         <input type=button value="Shutdown"
                             id="xvpShutdownButton">
@@ -95,8 +95,8 @@
             rfb.sendPassword($D('password_input').value);
             return false;
         }
-        function sendCtrlAltDel() {
-            rfb.sendCtrlAltDel();
+        function reconnect() {
+            window.onscriptsload();
             return false;
         }
         function xvpShutdown() {
@@ -115,7 +115,7 @@
             var s, sb, cad, level;
             s = $D('noVNC_status');
             sb = $D('noVNC_status_bar');
-            cad = $D('sendCtrlAltDelButton');
+            cad = $D('reconnectButton');
             switch (state) {
                 case 'failed':       level = "error";  break;
                 case 'fatal':        level = "error";  break;
@@ -151,8 +151,8 @@
         window.onscriptsload = function () {
             var host, port, password, path, token;
 
-            $D('sendCtrlAltDelButton').style.display = "inline";
-            $D('sendCtrlAltDelButton').onclick = sendCtrlAltDel;
+            $D('reconnectButton').style.display = "inline";
+            $D('reconnectButton').onclick = reconnect;
             $D('xvpShutdownButton').onclick = xvpShutdown;
             $D('xvpRebootButton').onclick = xvpReboot;
             $D('xvpResetButton').onclick = xvpReset;
